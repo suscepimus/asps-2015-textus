@@ -1,0 +1,100 @@
+% !TEX TS-program = LuaLaTex+se
+
+%%%%%%% préambule, type de document
+\documentclass[10pt]{article}
+
+%%%%%%% taille de l'ouvrage
+\usepackage[%
+			a6paper,%
+	%		paperwidth = 135 mm,% largeur de page
+	%		paperheight = 205 mm,% hauteur de page
+			%includehead,% inclure dans ces dimensions l'en-tête de page
+			%headheight = 5 mm,% hauteur de l'en-tête
+			%headsep = 4 mm,% séparation entre en-tête et page
+	%		left = 14 mm,% marge interne
+	%		right = 16 mm,% marge externe
+	%		top = 15 mm,% marge haute
+	%		bottom = 20 mm,% marge bas
+			margin=10 mm% marges, option toutes égales
+			]{geometry}% pour les formats
+
+\usepackage{fontspec} %%
+\usepackage[latin]{babel} %%
+\usepackage[autocompile]{gregoriotex} %%
+\usepackage{graphicx} % pour inclure des images
+%\pagestyle{empty} %%
+\setmainfont[
+   % BoldFont=Capella-Bold,
+ %   ItalicFont=Capella-Italic,
+ %   BoldItalicFont=Capella-Italic,
+   SmallCapsFont=Capella-SmallCaps,
+   SmallCapsFeatures={Letters=SmallCaps},
+]{Capella} % pour tout ceci voir fontspec pdf
+
+%\definecolor{gregoriocolor}{RGB}{229,53,44}% valeurs prédéfinies
+%\definecolor{gregoriocolor}{cmyk}{0,1,0,0}% pour avoir du rouge clair à l'impression
+\definecolor{gregoriocolor}{cmyk}{0,0,0,1}% pour avoir du noir uniquement
+
+\pagestyle{empty}
+
+\begin{document}
+
+\input{mechtildis.tex}
+
+%\grechangestaffsize{18}
+\gresetbarspacing{new}
+
+% voir TEX pour l’Impatient n°161 page 139
+\grechangedim{parskip}{1pt plus 2pt}{scalable}% espacement des partitions qui se suivent
+\grechangedim{lineskip}{10pt plus 2pt}{scalable}%
+\grechangedim{baselineskip}{36pt}{scalable}%espace de base entre les lignes de portée
+\grechangedim{lineskiplimit}{10pt}{scalable}% si ça va sous cette valeur TeX prend lineskip à la place
+
+%\grechangestaffsize{15}
+
+\def\GreStar{\textcolor{gregoriocolor}{*}}
+\def\Abar{\textcolor{gregoriocolor}{Ⱥ}}
+
+%%%%%%% annotation et commentary
+%\gresetheadercapture{commentary}{grecommentary}{string}
+%\grechangestyle{commentary}{\it\footnotesize\color{gregoriocolor}}
+%\grechangedim{annotationraise}{-2.5 mm}{scalable}
+%\grechangestyle{annotation}{\sc\small\color{gregoriocolor}}
+
+
+
+\gresetinitiallines{0}
+\grechangestaffsize{12}
+%\setgrefactor{12}   
+%\grechangestafflinefactor{12}
+%\stafflinefactor{15}
+%\grechangestyle{normalstafflines}{\LARGE}
+\begin{center}
+Psalmus 28 in II tono ad communionem\\ \textit{Omnes qui in Christo}, GR 61
+%{\Large\it Salvete cedri Libani\\
+%\rm\normalsize De communi monachorum}
+\end{center}
+%\vspace{2em}
+\small
+%\footnotesize
+
+\gabcsnippet{(f3)
+1. Af(e)fér(fe)te(eh) Dó(h)mi(h)no,(h) fí(hg)li(hi)i(i) De(hi)i:(h.) *(:)
+af(hf)fér(fh)te(h) Dó(h)mi(h)no(h) fí(h)li(h)os(i) a(hf)rí(h)e(ge)tum.(fgf.) (::) <sp>A/</sp>(f+)}
+
+\gabcsnippet{(f3)
+2. Af(e)fér(fe)te(eh) Dó(h)mi(h)no(h) gló(h)ri(h)am(h) et(h) ho(h)nó(h)rem,(h) (`)
+af(h)fér(h)te(h) Dó(h)mi(h)no(h) gló(h)ri(h)am(h) nó(hg)mi(hi)ni(i) e(hi)ius:(h.) *(:)
+ad(hf)o(fh)rá(h)te(h) Dó(h)mi(h)num(h) in(h) á(h)tri(h)o(i) sanc(hf)to(h) e(ge)ius.(fgf.) (::) <sp>A/</sp>(f+)}
+
+\gabcsnippet{(f3)
+3. Vox(e) Dó(fe)mi(eh)ni(h) su(h)per(h) a(h)quas,(h) (`)
+De(h)us(h) ma(h)ies(h)tá(h)tis(hg) in(hi)tó(i)nu(hi)it:(h.) *(:)
+Dó(hf)mi(fh)nus(h) su(h)per(i) a(hf)quas(h) mul(ge)tas.(fgf.) (::) <sp>A/</sp>(f+)}
+
+\gabcsnippet{(f3)
+4. Vox(e) Dó(fe)mi(eh)ni(hg) in(hi) vir(i)tú(hi)te:(h.) *(:)
+vox(hf) Dó(fh)mi(h)ni(h) in(h) ma(h)gni(i)fi(hf)cén(h)ti(ge)a.(fgf.) (::) <sp>A/</sp>(f+)}
+
+\end{document}
+
