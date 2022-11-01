@@ -1,0 +1,68 @@
+% !TEX TS-program = LuaLaTex+se
+
+\documentclass[12pt, twoside]{article} %%
+\usepackage{fontspec} %%
+%\usepackage[francais]{babel} %% si latin, faut régler la ponctuation, inutile avec Capella pour le moment
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=3cm]{geometry} %%margin=2 cm
+\usepackage[autocompile]{gregoriotex} %%
+\setmainfont[SmallCapsFont=Capella-SmallCaps, SmallCapsFeatures={Letters=SmallCaps}]{Capella} %
+\pagestyle{empty} %%
+\usepackage{graphicx}
+
+%%%%%%% sectionnement: les formats etc
+\usepackage{titlesec}% le package, l'option est peut-être superflue
+\titleformat{\section}% gde partie: odinaire, temporal sanctoral gde page rouge + psautier
+	[block]% style : hang, display, runin, leftmargin, ...
+	{\Large}% fonte numéro + titre
+	{}% numéro
+	{}% espace entre le numéro et le titre
+	{\color{gregoriocolor}}% fonte titre
+	[\nopagebreak]% after
+	
+%\newcommand\Partition[1]{%
+%	\fontsize{16}{18}\selectfont% taille du texte
+%	\gregorioscore{#1}%
+%	}%
+\raggedbottom
+
+\newcommand\TitreOraison[1]{%
+	\vspace{5mm plus 2mm minus 1mm}%
+	\noindent{{\Large\color{gregoriocolor}#1}}%
+	\vspace{2mm plus 2mm minus 0mm}%
+	}%
+
+\begin{document} %%
+
+\input{canevas.tex}
+
+\begin{center}
+
+Die 29 septembris\vspace*{2mm}
+
+{\Large
+\textcolor{gregoriocolor}{
+SS. MICHAELIS, GABRIELIS \& RAPHAELIS,\\[2mm] ARCHANGELORUM}
+}
+	
+\end{center}
+
+%\section*{Collecta}
+\TitreOraison{Collecta}
+\gregorioscore{OS-Oremus}
+\gregorioscore{OS-0929a}
+
+%\section*{Post precem}
+\TitreOraison{Post precem}
+\gregorioscore{OS-0929d}
+
+%\section*{Super oblata}
+\TitreOraison{Super oblata}
+\gregorioscore{OS-0929b}
+
+%\section*{Post communionem}
+\TitreOraison{Post communionem}
+\gregorioscore{OS-Oremus}
+\gregorioscore{OS-0929c}
+
+\end{document}
+

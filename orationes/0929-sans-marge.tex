@@ -1,0 +1,51 @@
+% !TEX TS-program = LuaLaTex+se
+
+\documentclass[12pt, twoside]{article} %%
+\usepackage{fontspec} %%
+%\usepackage[francais]{babel} %% si latin, faut régler la ponctuation, inutile avec Capella pour le moment
+%%%%%%% taille de l'ouvrage
+\usepackage[%
+			paperwidth = 170 mm,% largeur de page
+			%paperheight = 161 mm,% hauteur de page 9 lignes
+			paperheight = 25 mm,% hauteur de page 1 ligne
+			%paperheight = 36 mm,% hauteur de page 2 lignes
+			%includehead,% inclure dans ces dimensions l'en-tête de page
+			%headheight = 5 mm,% hauteur de l'en-tête
+			%headsep = 4 mm,% séparation entre en-tête et page
+			left = 0 mm,% marge interne
+			right = 0 mm,% marge externe
+			top = 1 mm,% marge haute
+			bottom = 0 mm,% marge bas
+			%margin= 0 mm% marges, option toutes égales
+			]{geometry}% pour les formats
+			
+%\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=3cm]{geometry} %%margin=2 cm
+\usepackage[autocompile]{gregoriotex} %%
+\setmainfont[SmallCapsFont=Capella-SmallCaps, SmallCapsFeatures={Letters=SmallCaps}]{Capella} %
+\pagestyle{empty} %%
+\usepackage{graphicx}
+
+%\raggedbottom
+
+\newcommand\TitreOraison[1]{%
+	\vspace{5mm plus 2mm minus 1mm}%
+	\noindent{{\Large\color{gregoriocolor}#1}}%
+	\vspace{2mm plus 2mm minus 0mm}%
+	}%
+
+\begin{document} %%
+
+\input{canevas.tex}
+
+\gregorioscore{OS-Oremus}
+
+\gregorioscore{OS-0929a}
+
+\gregorioscore{OS-0929d}
+
+\gregorioscore{OS-0929b}
+
+\gregorioscore{OS-0929c}
+
+\end{document}
+
